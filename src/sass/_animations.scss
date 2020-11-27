@@ -1,0 +1,39 @@
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-7.5rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes fadeRight {
+	0% {
+		opacity: 0;
+		transform: translateX(7.5rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+//vue specific
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 250ms ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}

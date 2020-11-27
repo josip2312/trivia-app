@@ -1,0 +1,39 @@
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 250ms ease-in-out;
+}
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+.overlay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.modal {
+	position: relative;
+	width: 90%;
+	max-width: 75rem;
+
+	--spacer: 4rem;
+	font-size: 2.25rem;
+	background-color: var(--secondary-300);
+	padding: 4.5rem 2rem 3rem 2rem;
+	border-radius: var(--br);
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	&-title {
+		margin-bottom: 1.5rem;
+	}
+}
