@@ -13,9 +13,9 @@ export default function useFetch(url) {
 			state.error = null;
 			state.isLoading = true;
 			const { data } = await Axios.get(url.value);
-			state.isLoading = false;
-			state.data = data;
 			console.log(data);
+			state.data = data;
+			state.isLoading = false;
 		} catch (error) {
 			state.isLoading = false;
 			state.error = 'Something went wrong';

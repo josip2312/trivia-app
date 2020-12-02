@@ -60,6 +60,8 @@ export default {
 	setup() {
 		const route = useRoute();
 		const { id, difficulty, questions } = route.params;
+
+		console.log(id, difficulty, questions);
 		const sessionToken = localStorage.getItem("sessionToken");
 		const url = ref(
 			`${process.env.VUE_APP_API_URL}?amount=${questions}&category=${id}&difficulty=${difficulty}&token=${sessionToken}`
@@ -162,9 +164,7 @@ export default {
 .container {
 	padding-top: 12.5em;
 	padding-bottom: 15em;
-	@include mq-min($v-10) {
-		min-height: 100vh;
-	}
+	min-height: 100vh;
 }
 
 .loading,

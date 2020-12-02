@@ -7,6 +7,8 @@
 			@clear-category-filter="categoryFilter = null"
 		/>
 
+		<button @click="chooseRandomCategory" class="btn random">Random</button>
+
 		<div v-if="categoriesData.isLoading" class="loading">Loading...</div>
 		<div v-if="categoriesData.error !== null" class="error">
 			{{ categoriesData.error }}
@@ -30,7 +32,7 @@ import CategoryCard from "../components/CategoryCard.vue";
 import CategoryCardFilter from "../components/CategoryCardFilter.vue";
 
 import { computed, ref } from "vue";
-
+import { useRouter } from "vue-router";
 export default {
 	name: "Categories",
 	components: {
@@ -44,6 +46,8 @@ export default {
 		let categories;
 		let filteredCategories;
 		const categoryFilter = ref(null);
+
+		const router = useRouter();
 
 		//request data is stored in local storage
 		const storedCategories = JSON.parse(localStorage.getItem("categories"));
@@ -80,12 +84,30 @@ export default {
 				return storedCategories;
 			});
 		}
+		const getRandomInt = (max) => {
+			return Math.floor(Math.random() * Math.floor(max));
+		};
+		const chooseRandomCategory = () => {
+			let difficulties = ["easy", "medium", "hard"];
+			let category = Math.floor(Math.random() * 24 + 9);
+			let numsOfQuestions = [5, 10, 15];
 
+			let difficulty = difficulties[getRandomInt(2)];
+			let num = numsOfQuestions[getRandomInt(2)];
+
+			console.log(difficulty, num, category);
+			router.push({
+				name: "Game",
+				params: { id: category, difficulty, questions: num },
+			});
+		};
 		return {
 			categoriesData,
 			categories,
 			filteredCategories,
 			categoryFilter,
+
+			chooseRandomCategory,
 		};
 	},
 };
@@ -94,12 +116,21 @@ export default {
 <style lang="scss" scoped>
 .container {
 	padding: 10em 0;
+	min-height: 100vh;
 }
 .categories {
 	--spacer: 7.5rem;
 	animation: appear 500ms ease-in-out;
 }
 .heading-2 {
+	margin-bottom: 3.5rem;
+}
+.random {
+	display: block;
+	width: 100%;
+	max-width: 30rem;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 5rem;
 }
 

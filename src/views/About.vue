@@ -13,8 +13,6 @@ export default {
 .container {
 	padding-top: 10em;
 	padding-bottom: 15em;
-	@include mq-min($v-10) {
-		min-height: 100vh;
-	}
+	min-height: 100vh;
 }
 </style>

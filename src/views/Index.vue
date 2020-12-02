@@ -270,8 +270,8 @@ export default {
 .home {
 	padding-top: 15em;
 	padding-bottom: 5em;
+
 	@include mq-min($v-10) {
-		min-height: 100vh;
 		padding-top: 10em;
 		padding-bottom: 10em;
 	}
@@ -312,6 +312,9 @@ export default {
 	margin-bottom: 5rem;
 }
 .showcase-image {
+	@include mq-max($v-8) {
+		display: none;
+	}
 	transform: scale(1.1);
 	svg {
 		display: block;

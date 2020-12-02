@@ -23,6 +23,7 @@
 <script>
 export default {
 	name: "CategoryFilter",
+
 	props: {
 		categories: {
 			type: Array,

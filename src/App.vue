@@ -21,13 +21,18 @@ export default {
 	async created() {
 		const storedToken = localStorage.getItem("sessionToken");
 
-		if (!storedToken) {
+		const expiryTime = localStorage.getItem("expiry");
+		const date = new Date().getTime();
+		if (!storedToken || expiryTime < date) {
 			const { data } = await axios.get(
 				`${process.env.VUE_APP_HELPER_URL}/api_token.php?command=request`
 			);
 
 			const sessionToken = data.token;
 			localStorage.setItem("sessionToken", sessionToken);
+			const date = new Date().getTime();
+			const expiryTime = date + 21600000; //6 hours;
+			localStorage.setItem("expiry", expiryTime);
 		}
 	},
 };
