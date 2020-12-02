@@ -61,7 +61,6 @@ export default {
 		const route = useRoute();
 		const { id, difficulty, questions } = route.params;
 
-		console.log(id, difficulty, questions);
 		const sessionToken = localStorage.getItem("sessionToken");
 		const url = ref(
 			`${process.env.VUE_APP_API_URL}?amount=${questions}&category=${id}&difficulty=${difficulty}&token=${sessionToken}`

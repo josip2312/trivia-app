@@ -95,7 +95,6 @@ export default {
 			let difficulty = difficulties[getRandomInt(2)];
 			let num = numsOfQuestions[getRandomInt(2)];
 
-			console.log(difficulty, num, category);
 			router.push({
 				name: "Game",
 				params: { id: category, difficulty, questions: num },
