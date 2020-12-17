@@ -1,50 +1,49 @@
 .btn {
-	display: inline-block;
-	text-decoration: none;
-	border: 0;
-	border-radius: var(--br);
-	background-color: var(--accent);
-	padding: 0.9em 1.4em;
+    display: inline-block;
+    text-decoration: none;
+    border: 0;
+    border-radius: var(--br);
+    background-color: var(--accent);
+    padding: 0.8em 1.4em;
 
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 1.8rem;
-	line-height: 1.2;
-	letter-spacing: 3px;
-	color: var(--font-primary);
-	font-weight: 700;
-	text-transform: uppercase;
-	text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    color: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
 
-	cursor: pointer;
-	transition: opacity 200ms ease-in-out;
+    cursor: pointer;
+    transition: opacity 200ms ease-in-out;
 }
 .btn:focus {
-	outline-offset: 0.25rem;
+    outline-offset: 0.25rem;
 }
 .btn:hover {
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 a {
-	text-decoration: none;
-	color: var(--font-primary);
+    text-decoration: none;
+    color: var(--font-primary);
 }
 a:focus {
-	outline: 2px solid var(--accent);
-	outline-offset: 0.5rem;
+    outline: 2px solid var(--accent);
+    outline-offset: 0.5rem;
 }
 
 @mixin input {
-	color: var(--font-primary);
-	padding: 1rem 1.2rem;
-	width: 100%;
+    color: var(--font-primary);
+    padding: 1rem 1.2rem;
+    width: 100%;
 
-	border: none;
-	border-bottom: 1px solid var(--secondary);
-	transition: border 200ms ease-in-out;
-	background-color: var(--secondary-light);
+    border: none;
+    border-bottom: 1px solid var(--secondary);
+    transition: border 200ms ease-in-out;
+    background-color: var(--secondary-light);
 
-	&:focus {
-		outline: 1px solid var(--secondary);
-	}
+    &:focus {
+        outline: 1px solid var(--secondary);
+    }
 }
