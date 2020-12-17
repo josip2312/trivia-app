@@ -1,38 +1,38 @@
 .spacing > * + * {
-	margin-top: var(--spacer, 2.5rem);
+    margin-top: var(--spacer, 2.5rem);
 }
 
 .my-1 {
-	margin: 1rem 0;
+    margin: 1rem 0;
 }
 .my-2 {
-	margin: 2rem 0;
+    margin: 2rem 0;
 }
 .my-3 {
-	margin: 3rem 0;
+    margin: 3rem 0;
 }
 .my-4 {
-	margin: 4rem 0;
+    margin: 4rem 0;
 }
 
 .py-1 {
-	padding: 1rem 0;
+    padding: 1rem 0;
 }
 .py-2 {
-	padding: 2rem 0;
+    padding: 2rem 0;
 }
 .py-3 {
-	padding: 3rem 0;
+    padding: 3rem 0;
 }
 .py-4 {
-	padding: 4rem 0;
+    padding: 4rem 0;
 }
 
 .container {
-	width: 90%;
-	max-width: 130rem;
-	margin: 0 auto;
-	@include mq-min($v-10) {
-		width: 85%;
-	}
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+    @include mq-min($v-10) {
+        width: 85%;
+    }
 }
